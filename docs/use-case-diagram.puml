@@ -1,0 +1,51 @@
+@startuml use-case-diagram
+title Doctor's Office - Use Cases (initial)
+left to right direction
+
+actor Assistant
+actor Doctor
+Doctor --|> Assistant
+
+rectangle "Doctor's Office Management System" {
+  usecase "Log in" as UC_Login
+
+  usecase "Register patient" as UC_Reg
+  usecase "Update patient" as UC_Upd
+  usecase "Search patient" as UC_Search
+  usecase "Archive patient" as UC_Arch
+
+  usecase "Book appointment" as UC_Book
+  usecase "Check availability" as UC_Avail
+  usecase "Reschedule appointment" as UC_Resched
+  usecase "Cancel appointment" as UC_Cancel
+  usecase "Confirm appointment" as UC_Confirm
+  usecase "View calendar" as UC_Cal
+
+  usecase "Complete appointment / mark no-show" as UC_Done
+  usecase "View today's dashboard" as UC_Dash
+  usecase "Manage office settings" as UC_Conf
+}
+
+Assistant --> UC_Login
+Assistant --> UC_Reg
+Assistant --> UC_Upd
+Assistant --> UC_Search
+Assistant --> UC_Arch
+Assistant --> UC_Book
+Assistant --> UC_Resched
+Assistant --> UC_Cancel
+Assistant --> UC_Confirm
+Assistant --> UC_Cal
+
+Doctor --> UC_Done
+Doctor --> UC_Dash
+Doctor --> UC_Conf
+
+UC_Book ..> UC_Avail : <<include>>
+UC_Resched ..> UC_Avail : <<include>>
+
+note right of UC_Conf
+  Working days and hours, breaks,
+  holidays, appointment duration
+end note
+@enduml

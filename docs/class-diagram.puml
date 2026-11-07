@@ -1,0 +1,90 @@
+@startuml class-diagram
+title Doctor's Office - Class Diagram (initial)
+skinparam classAttributeIconSize 0
+hide empty members
+
+enum Role {
+  DOCTOR
+  ASSISTANT
+}
+
+enum Gender {
+  MALE
+  FEMALE
+}
+
+enum AppointmentStatus {
+  SCHEDULED
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+}
+
+class User {
+  - id : Long
+  - username : String
+  - passwordHash : String
+  - fullName : String
+  - role : Role
+  - enabled : boolean
+}
+
+class Patient {
+  - id : Long
+  - firstName : String
+  - lastName : String
+  - dateOfBirth : LocalDate
+  - gender : Gender
+  - phone : String
+  - email : String
+  - nationalId : String
+  - address : String
+  - archived : boolean
+}
+
+class Appointment {
+  - id : Long
+  - startTime : LocalDateTime
+  - endTime : LocalDateTime
+  - status : AppointmentStatus
+  - reason : String
+  - cancelReason : String
+}
+
+class OfficeConfiguration {
+  - doctorName : String
+  - specialization : String
+  - phone : String
+  - address : String
+  - appointmentDurationMinutes : int
+}
+
+class WorkingDay {
+  - dayOfWeek : DayOfWeek
+  - startTime : LocalTime
+  - endTime : LocalTime
+  - breakStart : LocalTime
+  - breakEnd : LocalTime
+}
+
+class Holiday {
+  - date : LocalDate
+  - label : String
+}
+
+User --> Role
+Patient --> Gender
+Appointment --> AppointmentStatus
+
+Patient "1" -- "0..*" Appointment : has
+User "1" -- "0..*" Appointment : creates
+OfficeConfiguration "1" *-- "1..7" WorkingDay
+OfficeConfiguration "1" *-- "0..*" Holiday
+Appointment ..> OfficeConfiguration : slot validated against
+
+note bottom of OfficeConfiguration
+  One single record for the whole office.
+  Cached in the backend.
+end note
+@enduml
