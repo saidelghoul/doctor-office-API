@@ -5,13 +5,13 @@ Roles: DOCTOR, ASSISTANT (Doctor inherits all Assistant permissions).
 Learning goals: caching and testing (JUnit 5, Mockito, Spring Boot Test).
 
 ## Stack and conventions
-- Java 17, Spring Boot 3.3.5, Maven, Lombok
+- Java 21, Spring Boot 4.1.2, Maven, Lombok
 - Database: H2 in-memory for now (PostgreSQL + Flyway later)
 - Package: com.clinic (domain, dto, repository, service, web, security, exception, config)
 - DTOs, JWT auth (jjwt 0.12), Caffeine cache
 - Diagrams in docs/ (PlantUML): class-diagram.puml, use-case-diagram.puml
 
-## Done (code exists, see README.md for the API)
+## Done (to be re-implemented in the new project)
 - Entities: User, Patient, Appointment, OfficeConfiguration, WorkingDay, Holiday
 - Patients, appointments, calendar, office configuration, doctor dashboard
 - JWT login and role-based access

@@ -1,6 +1,6 @@
 # Doctor's Office Management System: backend PoC
 
-Spring Boot 3.3 / Java 17 / H2 (in-memory) / JWT / Caffeine cache.
+Spring Boot 4.1 / Java 21 / H2 (in-memory) / JWT / Caffeine cache.
 
 ## Run
 
