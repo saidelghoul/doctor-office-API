@@ -1,6 +1,6 @@
-package com.clinic.repository;
+package com.clinic.doctor_office.repository;
 
-import com.clinic.domain.OfficeConfiguration;
+import com.clinic.doctor_office.domain.OfficeConfiguration;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OfficeConfigurationRepository extends JpaRepository<OfficeConfiguration, Long> {

@@ -1,6 +1,6 @@
-package com.clinic.repository;
+package com.clinic.doctor_office.repository;
 
-import com.clinic.domain.Patient;
+import com.clinic.doctor_office.domain.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PatientRepository extends JpaRepository<Patient, Long> {
