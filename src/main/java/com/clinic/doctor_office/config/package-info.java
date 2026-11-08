@@ -1,4 +1,4 @@
 /**
  * Spring configuration classes (cache, etc.). Empty for now.
  */
-package com.clinic.config;
+package com.clinic.doctor_office.config;
