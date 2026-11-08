@@ -1,4 +1,4 @@
-package com.clinic.exception;
+package com.clinic.doctor_office.exception;
 
 // Placeholder: will be thrown by PatientService and mapped to HTTP 404 later.
 public class PatientNotFoundException extends RuntimeException {
