@@ -8,6 +8,7 @@ class DoctorOfficeApplicationTests {
 
 	@Test
 	void contextLoads() {
+		// Passes if the Spring application context (JPA, H2, security...) starts.
 	}
 
 }
